@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.darvds.dogbreeds.R
 import com.darvds.dogbreeds.application.BaseApplication
 import com.darvds.dogbreeds.models.DogBreed
+import com.darvds.dogbreeds.ui.breeddetails.BreedDetailsActivity
 import com.darvds.dogbreeds.ui.viewholders.BreedViewHolder
 import kotlinx.android.synthetic.main.activity_breed_list.*
 import javax.inject.Inject
@@ -64,7 +65,7 @@ class BreedListActivity : AppCompatActivity(), BreedListPresenter.View {
      * Go to a details activity for a specific breed
      */
     private fun viewBreedDetails(breed: DogBreed, viewHolder: BreedViewHolder) {
-
+        startActivity(BreedDetailsActivity.getActivityIntent(this, breed))
     }
 
     /**

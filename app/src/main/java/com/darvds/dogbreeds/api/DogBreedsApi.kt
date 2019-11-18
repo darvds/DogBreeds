@@ -12,5 +12,5 @@ interface DogBreedsApi {
     fun getDogBreeds() : Call<DogBreeds>
 
     @GET("breed/{breed}/images")
-    fun getRandomImage(@Path("breed") breed: String) : Call<DogBreedImages>
+    fun getRandomImage(@Path("breed", encoded = true) breed: String) : Call<DogBreedImages>
 }
