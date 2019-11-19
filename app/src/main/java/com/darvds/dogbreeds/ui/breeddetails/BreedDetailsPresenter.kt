@@ -13,6 +13,7 @@ import javax.inject.Inject
 class BreedDetailsPresenter @Inject constructor() : BasePresenter() {
 
     interface View : BaseView {
+        fun setBreedName(name: String)
         fun setImages(images: List<String>?)
         fun setIsLoading(isLoading: Boolean)
         fun showLoadingError()
@@ -28,6 +29,7 @@ class BreedDetailsPresenter @Inject constructor() : BasePresenter() {
 
     fun start(breed: DogBreed?) {
         if(breed != null) {
+            view?.setBreedName(breed.getName())
             loadImages(breed)
         }
     }

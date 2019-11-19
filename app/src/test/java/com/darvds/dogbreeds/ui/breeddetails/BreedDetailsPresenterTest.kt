@@ -33,6 +33,7 @@ class BreedDetailsPresenterTest {
     fun start_loads_dog_breeds_and_sets_to_view(){
 
         val mockBreed = mock<DogBreed>()
+        whenever(mockBreed.getName()).thenReturn("breed name")
         whenever(mockBreed.getApiPath()).thenReturn("mockpath")
 
         val mockDogBreedImages = mock<DogBreedImages>()
@@ -52,6 +53,8 @@ class BreedDetailsPresenterTest {
 
         presenter.start(mockBreed)
 
+        verify(mockView).setBreedName("breed name")
+
         val inOrder = inOrder(mockView, mockView)
         inOrder.verify(mockView).setIsLoading(true)
         inOrder.verify(mockView).setIsLoading(false)
@@ -64,6 +67,7 @@ class BreedDetailsPresenterTest {
     fun start_error_loading_shows_error_on_view(){
 
         val mockBreed = mock<DogBreed>()
+        whenever(mockBreed.getName()).thenReturn("breed name")
         whenever(mockBreed.getApiPath()).thenReturn("mockpath")
 
         val mockCall = mock<Call<DogBreedImages>>()
@@ -78,6 +82,8 @@ class BreedDetailsPresenterTest {
 
         presenter.start(mockBreed)
 
+        verify(mockView).setBreedName("breed name")
+
         val inOrder = inOrder(mockView, mockView)
         inOrder.verify(mockView).setIsLoading(true)
         inOrder.verify(mockView).setIsLoading(false)
@@ -90,6 +96,7 @@ class BreedDetailsPresenterTest {
     fun start_failure_shows_error_on_view(){
 
         val mockBreed = mock<DogBreed>()
+        whenever(mockBreed.getName()).thenReturn("breed name")
         whenever(mockBreed.getApiPath()).thenReturn("mockpath")
 
         val mockCall = mock<Call<DogBreedImages>>()
@@ -102,6 +109,7 @@ class BreedDetailsPresenterTest {
 
         presenter.start(mockBreed)
 
+        verify(mockView).setBreedName("breed name")
 
         val inOrder = inOrder(mockView, mockView)
         inOrder.verify(mockView).setIsLoading(true)

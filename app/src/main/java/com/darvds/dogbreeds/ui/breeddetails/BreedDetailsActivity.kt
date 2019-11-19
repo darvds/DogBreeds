@@ -63,6 +63,10 @@ class BreedDetailsActivity : AppCompatActivity(), BreedDetailsPresenter.View {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun setBreedName(name: String) {
+        title = name
+    }
+
     /**
      * Set the list of breeds to the view. Create or update an existing adapter
      */
