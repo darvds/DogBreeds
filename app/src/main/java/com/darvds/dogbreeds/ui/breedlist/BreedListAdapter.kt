@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.darvds.dogbreeds.R
 import com.darvds.dogbreeds.models.DogBreed
-import com.darvds.dogbreeds.models.DogBreeds
 import com.darvds.dogbreeds.ui.viewholders.BreedViewHolder
 
 class BreedListAdapter(

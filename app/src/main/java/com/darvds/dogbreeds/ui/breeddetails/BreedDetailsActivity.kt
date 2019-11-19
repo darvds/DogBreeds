@@ -8,8 +8,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.darvds.dogbreeds.R
 import com.darvds.dogbreeds.application.BaseApplication
 import com.darvds.dogbreeds.models.DogBreed

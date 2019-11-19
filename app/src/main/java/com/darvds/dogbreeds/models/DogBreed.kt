@@ -5,15 +5,17 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DogBreed(val breed: String,
-                    val subBreed: String?) : Parcelable {
+data class DogBreed(
+    val breed: String,
+    val subBreed: String?
+) : Parcelable {
 
     /**
      * Get the name of the breed including the sub-breed where applicable
      */
     @SuppressLint("DefaultLocale")
     fun getName(): String {
-        return if(subBreed != null){
+        return if (subBreed != null) {
             "${subBreed.capitalize()} ${breed.capitalize()}"
         } else {
             breed.capitalize()
@@ -23,11 +25,12 @@ data class DogBreed(val breed: String,
     /**
      * Get the API path for the breed
      */
-    fun getApiPath() : String {
-        return if(subBreed != null){
-            "$breed/$subBreed"
+    @SuppressLint("DefaultLocale")
+    fun getApiPath(): String {
+        return if (subBreed != null) {
+            "${breed.toLowerCase()}/${subBreed.toLowerCase()}"
         } else {
-            breed
+            breed.toLowerCase()
         }
     }
 }

@@ -9,8 +9,8 @@ import retrofit2.http.Path
 interface DogBreedsApi {
 
     @GET("breeds/list/all")
-    fun getDogBreeds() : Call<DogBreeds>
+    fun getDogBreeds(): Call<DogBreeds>
 
     @GET("breed/{breed}/images")
-    fun getRandomImage(@Path("breed", encoded = true) breed: String) : Call<DogBreedImages>
+    fun getRandomImage(@Path("breed", encoded = true) breed: String): Call<DogBreedImages>
 }

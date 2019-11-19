@@ -10,7 +10,8 @@ import javax.inject.Singleton
 @Component(
     modules = [
         NetworkingModule::class
-    ])
+    ]
+)
 interface AppComponent {
     fun inject(breedListActivity: BreedListActivity)
     fun inject(breedListActivity: BreedDetailsActivity)

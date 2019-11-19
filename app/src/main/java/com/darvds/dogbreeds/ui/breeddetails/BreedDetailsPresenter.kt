@@ -26,8 +26,10 @@ class BreedDetailsPresenter @Inject constructor() : BasePresenter() {
     private var images: List<String>? = null
 
 
-    fun start(breed: DogBreed) {
-        loadImages(breed)
+    fun start(breed: DogBreed?) {
+        if(breed != null) {
+            loadImages(breed)
+        }
     }
 
     /**

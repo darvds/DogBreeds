@@ -38,7 +38,7 @@ class BreedListPresenter @Inject constructor() : BasePresenter() {
         if (dogBreeds == null) {
             view?.setIsLoading(true)
 
-            api.getDogBreeds().enqueue(object: Callback<DogBreeds> {
+            api.getDogBreeds().enqueue(object : Callback<DogBreeds> {
                 override fun onFailure(call: Call<DogBreeds>, t: Throwable) {
                     view?.setIsLoading(false)
                     view?.showLoadingError()
@@ -46,7 +46,7 @@ class BreedListPresenter @Inject constructor() : BasePresenter() {
 
                 override fun onResponse(call: Call<DogBreeds>, response: Response<DogBreeds>) {
                     view?.setIsLoading(false)
-                    if(response.isSuccessful){
+                    if (response.isSuccessful) {
                         dogBreeds = response.body()?.toList()
                         view?.setBreeds(dogBreeds)
                     } else {

@@ -2,7 +2,8 @@ package com.darvds.dogbreeds.models
 
 data class DogBreeds(
     val message: Map<String, List<String>?>,
-    val status: String) {
+    val status: String
+) {
 
     /**
      * Get a list of each possible dog breed, including their subbreeds,
@@ -11,7 +12,7 @@ data class DogBreeds(
     fun toList(): ArrayList<DogBreed> {
         val dogBreeds = ArrayList<DogBreed>()
         message.toSortedMap().forEach { breed ->
-            if(!breed.value.isNullOrEmpty()){
+            if (!breed.value.isNullOrEmpty()) {
                 breed.value?.forEach { subBreed ->
                     dogBreeds.add(DogBreed(breed.key, subBreed))
                 }

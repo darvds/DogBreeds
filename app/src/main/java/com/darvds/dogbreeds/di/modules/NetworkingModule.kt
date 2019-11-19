@@ -13,7 +13,7 @@ class NetworkingModule {
 
     @Provides
     @Singleton
-    fun provideApi() : DogBreedsApi {
+    fun provideApi(): DogBreedsApi {
         val client = OkHttpClient.Builder().build()
         val retrofit = Retrofit.Builder()
             .baseUrl("https://dog.ceo/api/")
